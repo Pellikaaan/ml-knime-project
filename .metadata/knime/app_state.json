@@ -1,0 +1,48 @@
+{
+  "version" : "5.8.0.v202510131944",
+  "projects" : [ {
+    "name" : "regression_housing",
+    "active" : false,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "regression_housing"
+    }
+  }, {
+    "name" : "Assignment 2",
+    "active" : true,
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "relativePath" : "Assignment 2"
+    }
+  } ],
+  "mostRecentlyUsedProjects" : [ {
+    "name" : "classification_adult",
+    "timeUsed" : "2025-11-19T16:33:20.856659+01:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "classification_adult"
+    }
+  }, {
+    "name" : "regression_housing",
+    "timeUsed" : "2025-11-23T14:51:33.010921+01:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "regression_housing"
+    }
+  }, {
+    "name" : "Assignment 2",
+    "timeUsed" : "2025-11-24T10:42:37.721842+01:00",
+    "origin" : {
+      "providerId" : "local",
+      "spaceId" : "local",
+      "projectType" : "WORKFLOW",
+      "relativePath" : "Assignment 2"
+    }
+  } ]
+}

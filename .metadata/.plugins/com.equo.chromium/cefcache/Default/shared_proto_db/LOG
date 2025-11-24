@@ -1,2 +1,3 @@
-2025/11/19-16:31:54.640 21403 Creating DB /Users/pelli/Documents/GitHub/ml-knime-project/.metadata/.plugins/com.equo.chromium/cefcache/Default/shared_proto_db since it was missing.
-2025/11/19-16:31:54.657 21403 Reusing MANIFEST /Users/pelli/Documents/GitHub/ml-knime-project/.metadata/.plugins/com.equo.chromium/cefcache/Default/shared_proto_db/MANIFEST-000001
+2025/11/24-17:18:55.070 20403 Reusing MANIFEST /Users/pelli/Documents/GitHub/ml-knime-project/.metadata/.plugins/com.equo.chromium/cefcache/Default/shared_proto_db/MANIFEST-000001
+2025/11/24-17:18:55.071 20403 Recovering log #3
+2025/11/24-17:18:55.073 20403 Reusing old log /Users/pelli/Documents/GitHub/ml-knime-project/.metadata/.plugins/com.equo.chromium/cefcache/Default/shared_proto_db/000003.log 

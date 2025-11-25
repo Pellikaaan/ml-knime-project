@@ -1,0 +1,4 @@
+.metadata/
+.knime/
+*.knwf.backup
+*.table

@@ -1,1 +1,60 @@
-first commit
+# Essem – KNIME Data Science Workflow (Forecasting + Basket Analysis + Segmentation)
+
+A KNIME workflow that turns historical transaction data into decision support for production planning:
+1) demand forecasting, 2) product co-purchase patterns (association rules), and 3) customer segmentation.
+
+> Note: The raw dataset is not included in this repository (company data). The workflow is built so the input Excel can be replaced with updated extracts.
+
+## What’s inside (3 analysis tasks)
+
+### 1) Demand forecasting (numeric prediction)
+- Goal: predict future ordered quantities to support inventory & production planning.
+- Approach: feature engineering with time attributes + lag features, then **Random Forest Regression**.
+- Evaluation: RMSE, MAE, R².  
+(See report for methodology and business context.)  [oai_citation:3‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+
+### 2) Market basket analysis (association rules)
+- Goal: find products frequently bought together to support bundling/recommendations.
+- Approach: **Association Rule Learner (Borgelt)** with support/confidence/lift metrics.
+- Output: dashboard with heatmap + scatter + parallel coordinates to inspect rules.  [oai_citation:4‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+
+### 3) Customer segmentation (clustering)
+- Goal: identify distinct customer types based on purchase composition.
+- Approach: build customer–product matrix, normalize, then **K-Means** (3-cluster solution).  [oai_citation:5‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+
+## Tech
+- KNIME Analytics Platform (workflow created in KNIME 5.8.x)
+- Nodes used include: Excel Reader, filtering/feature engineering, Random Forest, Association Rules (Borgelt), K-Means, and dashboard visualizations.
+
+## How to run
+1. Install **KNIME Analytics Platform**.
+2. Download/open the workflow:
+   - In KNIME: **File → Import KNIME Workflow…**
+   - Select: `workflow/Project-final.knwf`
+3. Configure the input data:
+   - Open the workflow, find the **Excel Reader** node.
+   - Right-click → **Configure** → point it to your local Excel file (same columns as the original dataset).
+4. Execute:
+   - Right-click the workflow (or use “Execute all”) and run from left to right.
+5. View outputs:
+   - Open the dashboard components / views for forecasting plots and association rule visualizations.
+
+## Data expectations
+Your Excel should contain transaction-level records with (at minimum) identifiers like:
+- Order number (Ordernr), customer id (Kundnr), product code (Artikelkod)
+- Quantity / order amount used for forecasting and customer behavior features  
+(Full business context and data prep rationale in report.)  [oai_citation:6‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+
+## Outputs
+- Forecasting dashboard: predicted demand for the next period, with visual summaries (line/scatter/bar/table views).  [oai_citation:7‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+- Association rule dashboard: heatmap (confidence), “top antecedents” bar chart, scatter with lift/support/confidence, parallel coordinate plot.  [oai_citation:8‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+- Segmentation output: customer clusters (3 groups) for interpreting mainstream vs specific-need customers.  [oai_citation:9‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
+
+## Data & privacy
+This repository does not include the company dataset.  
+To make this repo easier to reproduce, consider adding:
+- `data/README.md` describing required columns + how to export the Excel
+- a small anonymized sample (10–100 rows) if allowed
+
+## Report
+See `docs/ProjectReport.pdf` for the full CRISP-DM-based process, modeling decisions, and results.  [oai_citation:10‡ProjectReportDataScience-final-project-sub.pdf](sediment://file_000000003e0c71f4860ea4532664f1fe)
